@@ -31,6 +31,7 @@ class RoomRecyclerViewAdapter(
     }
 
     //우리가 만든 이너 클래스 뷰홀더 하나를 생성하는거다 So 원래 바깥<>에 넣었던 뷰홀더가 요 생성하는 뷰홀더가 되는거다
+    //Trello) 어떤 xml을 inflate해서 사용할건지 즉 ViewHolder를 객체화 하는 곳 So ViewHolder객체로 만들어서 return해주면 됨
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         //view와 우리가 만든 ViewHolder를 연결하는 자리 /from(mContext) 어댑터 만들때 생성자 만들어 줬으므로 그걸 이용
         ///그리고 from(mContext)를 inflate해줘라 How)R리소스 폴더에 layout에 한 칸 xml(room_list_item)만들어 논게 있으니 그걸 들고와서 해줘라
@@ -41,8 +42,9 @@ class RoomRecyclerViewAdapter(
     }
 /// onBindViewHolder는 position값이 지어지는데 이 값을 활용할거다 & holder내부에는 우리가 만든 이너클래스 MyViewHolder가 있다
 ////그래서 이 함수는 ViewHolder랑 내가 가진 Data를 어떻게 Bind시킬거냐는 뜻이다
+//Trello) 위치에 맞는 데이터를 추출해서 ViewHolder내부 함수를 이용해서 실제 데이터를 반영해주는 함수다
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(mList[position])
+        holder.bind(mList[position])  //return holder라는 변수에 점을 찍어서 바인드라는 내부 함수르 활용함 한 칸의 아이템은 mList에 position 번째에 있다
     }
 // So 총 이 리사이클러뷰 몇개 만들건데
     override fun getItemCount(): Int {
