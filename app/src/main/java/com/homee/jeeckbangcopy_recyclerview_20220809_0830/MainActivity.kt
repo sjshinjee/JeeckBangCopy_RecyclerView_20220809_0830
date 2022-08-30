@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//      멤버변수 만들어 놨던거 불러준다
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
     }
 }
