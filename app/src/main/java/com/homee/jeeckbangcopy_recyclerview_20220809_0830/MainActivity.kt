@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.homee.jeeckbangcopy_recyclerview_20220809_0830.adapters.RoomRecyclerViewAdapter
 import com.homee.jeeckbangcopy_recyclerview_20220809_0830.databinding.ActivityMainBinding
+import com.homee.jeeckbangcopy_recyclerview_20220809_0830.datas.RoomData
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
 
 // 한 칸의 RoomData를 가지고 있을 ArrayList 하나를 만들어줘라
-    val mRoomList = ArrayList<RoomData>
+    val mRoomList = ArrayList<RoomData>()
 
     lateinit var mRoomAdapter : RoomRecyclerViewAdapter
 
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         //binding으로 뽑아와야한다
         binding.roomRecyclerView.adapter = mRoomAdapter
 //리스트뷰는 바로 위 2줄만 해도 된다 하지만 리사이클러뷰는 LayoutManager를 설정해줘야 함 얘 또한 binding이용
-        binding.roomRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.roomRecyclerView.layoutManager = LinearLayoutManager(this,)
 
     }
 }

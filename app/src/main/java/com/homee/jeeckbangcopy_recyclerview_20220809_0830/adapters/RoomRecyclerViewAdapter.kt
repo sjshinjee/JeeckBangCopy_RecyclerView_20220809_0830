@@ -1,9 +1,11 @@
 package com.homee.jeeckbangcopy_recyclerview_20220809_0830.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.homee.jeeckbangcopy_recyclerview_20220809_0830.datas.RoomData
 
 //class RoomRecyclerViewAdapter 뒤에 :ArrayAdapter로 받았던 것이 ListView이고 이젠 상속이 달라진다
 ///RecyclerView.Adapter로 코드하면 하나하나 다 받아야 하므로 귀찮으므로 다른 방식으로 한다
@@ -17,7 +19,8 @@ import androidx.recyclerview.widget.RecyclerView
 //참조2)즉 RecyclerViewAdapter자체가 abstract로 가지고 있는 기능들이 좀 있다
 
 class RoomRecyclerViewAdapter(
-    val mContext : Context //리사이클러뷰어댑터를 만들때 넣는 생성자들은 상속을 받을 때 필요한게 아니라 밑에 어댑터 내부 정보를 적을때 필요하다
+    //리사이클러뷰어댑터를 만들때 넣는 생성자들은 상속을 받을 때 필요한게 아니라 밑에 어댑터 내부 정보를 적을때 필요하다
+    val mContext : Context,
     val mList : List<RoomData>
 ) : RecyclerView.Adapter<RoomRecyclerViewAdapter.MyViewHolder>(){
 
